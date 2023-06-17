@@ -1,0 +1,265 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--backgroundColor: #edf2f8;
+	--white: #ffffff;
+	--popUpColor: #49556b;
+	--BigFontColor: #4e5560;
+	--smallFontColor: #798088;
+	--arrowActiveColor: #6b7f98;
+	--arrowUnActiveColor: #ebf0f6;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Manrope', sans-serif;
+	background-color: var(--backgroundColor);
+}
+
+.global-wrapper {
+	margin: 25px;
+	background-color: var(--white);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: -2px 8px 24px 0px rgba(107, 127, 152, 0.3);
+}
+
+.heroimage {
+	background-image: url(./images/drawers.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: -15px;
+	height: 200px;
+	width: 100%;
+}
+
+.content-wrapper {
+	padding: 40px 30px 20px 30px;
+}
+
+h1 {
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--BigFontColor);
+	padding-bottom: 24px;
+}
+
+p {
+	font-size: 13.5px;
+	font-weight: 500;
+	color: var(--smallFontColor);
+	padding-bottom: 34px;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.person-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.persone-image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.personal-info {
+	padding-left: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-direction: column;
+}
+
+.name {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--BigFontColor);
+}
+
+.date {
+	font-size: 11px;
+	font-weight: 500;
+	color: var(--smallFontColor);
+}
+
+.arrow-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: var(--arrowUnActiveColor);
+	transition: background-color 0.3s;
+}
+
+.arrow-icon:hover {
+	background-color: var(--popUpColor);
+	cursor: pointer;
+}
+
+i {
+	color: var(--smallFontColor);
+	transition: color 0.3s;
+}
+
+.arrow-icon:hover > i {
+	color: var(--white);
+}
+
+.popup {
+	position: relative;
+	height: 60px;
+	width: calc(100% + 60px);
+	left: -30px;
+	padding: 0 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--popUpColor);
+	display: none;
+}
+
+.share {
+	color: var(--smallFontColor);
+	font-size: 12px;
+	padding-right: 10px;
+	letter-spacing: 4px;
+}
+
+.social-media-icons {
+	display: flex;
+	align-items: center;
+}
+
+.arrow2 {
+	background-color: var(--arrowActiveColor);
+}
+
+.arrow2:hover {
+	background-color: var(--backgroundColor);
+}
+
+.arrow2 > i {
+	color: var(--white);
+}
+
+.arrow2:hover > i {
+	color: var(--popUpColor);
+}
+
+.fa-brands {
+	color: var(--arrowUnActiveColor);
+	font-size: 20px;
+	cursor: pointer;
+	padding: 0 5px;
+}
+
+.fa-brands:hover {
+	color: var(--white);
+}
+
+/* media queries */
+
+@media only screen and (max-width: 355px) {
+	.personal-info {
+		position: static;
+		padding-top: 10px;
+	}
+
+	footer {
+		flex-direction: column;
+	}
+
+	.person-wrapper {
+		flex-direction: column;
+		padding-bottom: 15px;
+	}
+
+	.heroimage {
+		background-position: center;
+	}
+
+	.popup {
+		height: 180px;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.social-media-icons {
+		flex-direction: column;
+		padding: 10px;
+	}
+
+	.share {
+		padding: 10px 0;
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	.heroimage {
+		background-position: center;
+		height: 300px;
+	}
+}
+
+@media only screen and (min-width: 880px) {
+	.global-wrapper {
+		display: flex;
+		flex-direction: row;
+		height: 280px;
+		width: 730px;
+		margin: 0;
+		overflow: visible;
+	}
+
+	.heroimage {
+		height: 100%;
+		width: 771px;
+		background-position-y: 0px;
+	}
+
+	.content-wrapper {
+		position: relative;
+	}
+
+	.popup {
+		position: absolute;
+		height: 55px;
+		width: 220px;
+		border-radius: 10px;
+		top: 110px;
+		left: 290px;
+		z-index: 20;
+		box-shadow: 0px 9px 24px 0px rgba(66, 68, 90, 0.23);
+	}
+
+	.popup::before {
+		position: absolute;
+		content: '';
+		width: 20px;
+		height: 20px;
+		top: 45px;
+		left: 100px;
+		background-color: var(--popUpColor);
+		rotate: 45deg;
+	}
+
+	.arrow2 {
+		display: none;
+	}
+}
